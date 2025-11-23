@@ -1,0 +1,474 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+:root{
+    --background-gray : #f2f2f2;
+    --backgroun-white: #ffffff;
+    --value20px: 10px;
+    --background-orange: #ffa500;
+    --background-green:#008000;
+    --background-black: #000000;
+}
+html{
+    font-size: 16px;
+}
+body{
+    height: 98vh;
+    align-content: center;
+}
+main{
+    overflow: hidden;
+    width: 500px;
+    background: var(--background-gray);
+    border-radius: 3px;
+    margin: 0 auto;
+    border: solid var(--background-gray);
+}
+header{
+    text-align: center;
+    background: var(--backgroun-white);
+    align-content: center;
+    min-height: 40px;
+}
+section{
+    /* position: relative; */
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit,minmax(20px , 1fr)); */
+    grid-template-columns: 1.5fr 1fr;
+    margin: 1px;
+    padding: 0px  var(--value20px);
+    gap: var(--value20px);
+    min-height: 239px;
+}
+.section{
+    position: relative;
+}
+header p{
+    font-weight: bold;
+    text-transform: capitalize;
+}
+section .buttons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: var(--value20px);
+}
+.buttons button{
+    color: white;
+}
+.roleBtn{
+    background-color: var(--background-green);
+}
+.section button{
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 3px;
+}
+section .buttons .CheckWordBtn{
+    flex: 1;
+    background-color: var(--background-orange);
+}
+section .buttons .HintBtn{
+    background-color: var(--background-green);
+}
+.colors-explaination-holder div{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    background: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+.colors-explaination-holder span{
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+.colors-explaination-holder div:not(:last-child){
+    margin-bottom: 5px;
+}
+.colors-explaination-holder p{
+    flex: 1;
+    font-size: 14px;
+    font-size: 11px;
+}
+.keyColorsText{
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.TriesDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.tries-holder input{
+    text-align: center;
+    width: 30px;
+    font-size: 20px;
+    padding: 2px 0px;
+    outline: none;
+    align-items: center;
+}
+.try{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.try div{
+    display: flex;
+    gap: 2px;
+}
+.try p{
+    text-transform: capitalize;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 16px;
+    word-spacing: -5px;
+    margin-right: 20px;
+}
+.try:not(:last-child){
+    margin-bottom: 10px;
+}
+/*add letter */
+.disabled{
+    opacity: 0.5;
+    pointer-events: none;
+    user-select: none;
+}
+.input-disabled{
+    pointer-events: none;
+    user-select: none;
+}
+.bg-green{
+    background-color: var(--background-green);
+    color: white;
+    border: solid green 1px;
+}
+.bg-orange{
+    background-color: var(--background-orange);
+    color: white;
+    border: solid orange 1px;
+}
+.bg-black{
+    background-color: var(--background-black);
+    color: white;
+    border: solid black 1px;
+}
+.msg-orange{
+    width: fit-content;
+    padding: 2px 15px;
+    margin: 0 auto;
+    color: var(--background-orange);
+    background: var(--background-black);
+    border-radius: 5px;
+    text-transform: capitalize;
+}
+.msg-hidden{
+    height: 0px;
+    overflow: hidden;
+    pointer-events: none;
+    transition: .3s ease;
+}
+.hiden{
+    display: none;
+}
+.message-holder{
+    margin-bottom: var(--value20px);
+    height: 0px;
+    overflow: hidden;
+    transition: .5s ease;
+}
+.result-Msg-container{
+    text-align: center;
+}
+.result-Msg-container .resultMsg{
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.result-Msg-container .Msg-word-styling{
+    color: green;
+    font-weight: bold;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    display: block;
+    font-family:sans-serif;
+}
+.playAgainBtn{
+    background: green;
+    color: white;
+    text-transform: capitalize;
+}
+.playAgainDiv{
+    display: flex;
+    justify-content: center;
+}
+.gameOver{
+    color: #cb0000;
+    font-weight: bold;
+    font-size: 30px;
+    text-transform: capitalize;
+    margin-bottom: 5px;
+}
+.currectWordis{
+    font-weight: bold;
+    font-family: math;
+    letter-spacing: 1px;
+}
+.currectWordHolder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+.game-start{
+    /* display: none; */
+    position: absolute;
+    align-content: center;
+    text-align: center;
+    background: #f2f2f2;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+select{
+    outline: none;
+}
+.border-bottom-style{
+    border: 1px solid gray;
+    border-bottom-color: green;
+    border-bottom-width: 2px;
+}
+.game-start p{
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+.game-start select{
+    margin: var(--value20px) 0px;
+    padding: 3px 6px;
+    border: solid orange 2px;
+    color: black;
+    text-transform: capitalize;
+}
+#startBtn{
+    background: var(--background-green);
+    color: white;
+    min-width: 100px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: sans-serif;
+}
+.menu{
+    padding: 0px !important;
+    position: absolute;
+    top: 0;
+    right: 2px;
+    font-size: 25px;
+    padding: 0;
+}
+.menu i{
+    font-weight: bold;
+}
+.menu-holder{
+    right: 0px;
+    top: 0;
+    padding: 0px 5px;
+    font-weight: bold;
+    position: absolute;
+    background: white;
+    right: -200px;
+    width: 200px;
+    transition: 0.5s ease;
+    border: 1px solid black;
+}
+.xmark-div{
+    display: flex;
+    justify-content: flex-end;
+}
+.xmark-div a{
+    width: 20px;
+    margin: 5px 0px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+.xmark-div a:hover{
+    background: var(--background-black);
+    padding: 2px;
+    border-radius: 50%;
+    transition: background .5s;
+}
+.xmark-div a:hover i{
+    color: red;
+}
+.xmark-div i{
+    color:var(--background-orange) ;
+}
+.selector-div{
+    text-transform: capitalize;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 0px 5px;
+}
+.divHover:hover{
+    background-color: #e2e1e1;
+    transition: .5s;
+}
+.BtnRestart{
+    margin-top: 10px;
+}
+.restart-gameBtn{
+    background: var(--background-green);
+    color: var(--backgroun-white);
+}
+.text2{
+    font-weight: bold;
+    font-family: sans-serif;
+    text-transform: capitalize;
+}
+.doneBtnDiv{
+    position: relative;
+    margin: 10px 0px 5px;
+    align-content: center;
+    text-align: center;
+}
+.doneBtn{
+    font-family: sans-serif;
+    text-transform: capitalize;
+    background: orange;
+    color: white;
+    font-weight: bold;
+    padding: 2px 6px;
+    margin-right:5px
+}
+.resetBtn{
+    background: red;
+    color: white;
+}
+.divForColors{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0px;
+    gap: 10px;
+}
+.divForColors .clr{
+    cursor: pointer;
+    border: none;
+    background: none;
+    width: 25px;
+    height: 25px;
+}
+.colors-explaination-holder .span-color-1{
+    background-color: var(--background-orange);
+}.colors-explaination-holder .span-color-2{
+    background-color: var(--background-green);
+}.colors-explaination-holder .span-color-3{
+    background-color: var(--background-black);
+}
+.categoryText-holder{
+    align-items: center;
+    text-align: center;
+    padding-top: var(--value20px);
+    color: var(--background-black);
+    font-family: sans-serif;
+    text-transform: capitalize;
+    word-spacing: 5px;
+}
+.resultMsg.victoryText{
+    color: green;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+}
+/*  */
+.confirmation{
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    z-index: 9999;
+}
+.confirmation p{
+    font-size: 10px;
+    margin-bottom: 5px;
+}
+.confirmationBtnsDiv{
+    padding: 0px 10px;
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+}
+.confirmation .yesBtn{
+    padding: 0px 9px;
+    text-transform: capitalize;
+    outline: 1px solid red;
+    font-size: 10px;
+}
+.confirmation .noBtn{
+    padding: 0px 9px;
+    text-transform: capitalize;
+    outline: 1px solid green;
+    font-size: 10px;
+    font-size: clamp();
+}
+
+
+@media(min-width:700px){
+    main{
+        width: 700px;
+    }
+    .colors-explaination-holder p{
+        font-size: 16px;
+    }
+}
+@media(max-width:525px){
+    main{
+        margin: 0 10px;
+        width: auto;
+    }
+    section{
+        grid-template-columns: 1fr;
+    }
+    .try p{
+        font-size: 14px;
+        margin-right: 0px;
+    }
+    .tries-holder{
+        margin: 0 auto;
+    }
+    .tries-holder input{
+        font-size: 12px;
+        width: 16px;
+    }
+    .try div{
+        flex-wrap: wrap;
+    }
+    section .buttons{
+        flex-wrap: wrap;
+        /* font-size: 12px; */
+    }
+    .buttons button{
+        font-size: 10px;
+    }
+}
+
